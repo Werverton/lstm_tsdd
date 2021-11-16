@@ -1,0 +1,61 @@
+{
+    "filtered_traces_path": "/home/werverton/DATA/traces/filtered_traces",
+    "ui_details_path": "/home/werverton/DATA/ui_details.csv",
+    "semantic_annotations_path": "/home/werverton/DATA/semantic_annotations",
+
+    "text_dim": 0,
+    "image_dim": 1,
+    "interact_dim": 2,
+    "total_dims": 3,
+
+    "semantic_labels": [
+        "Advertisement",
+        "Background Image",
+        "Bottom Navigation",
+        "Button Bar",
+        "Card",
+        "Checkbox",
+        "Date Picker",
+        "Drawer",
+        "Icon",
+        "Image",
+        "Input",
+        "List Item",
+        "Map View",
+        "Modal",
+        "Multi-Tab",
+        "Number Stepper",
+        "On/Off Switch",
+        "Pager Indicator",
+        "Radio Button",
+        "Slider",
+        "Text",
+        "Text Button",
+        "Toolbar",
+        "Video",
+        "Web View"
+    ],
+
+    "interact_touch": 0,
+    "interact_long_touch": 1,
+    "interact_swipe_left": 2,
+    "interact_swipe_right": 3,
+    "interact_swipe_up": 4,
+    "interact_swipe_down": 5,
+    "interact_input_text": 6,
+    "total_interacts": 7,
+
+    "boundary_width": 1,
+
+    "downscale_dim": [180, 320],
+    "origin_dim": [1440, 2560],
+    "status_bar_height": 84,
+    "navigation_bar_height": 168,
+
+    "gauss_delta": 20,
+    "long_touch_threshold": 5,
+    "swipe_threshold": 10,
+    "data_augmentation_threshold": 1,
+
+    "output_dir": "/home/werverton/DATA/annotation_training_data"
+}
