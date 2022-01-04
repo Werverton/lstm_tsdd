@@ -37,7 +37,7 @@ def process_trace(trace_path, config_json):
     view_tree_paths = [os.path.join(view_trees_dir, "%d.json" % x) for x in view_tree_tags]
     image_array = [image.convert_view_tree_file(x, config_json)
                    for x in view_tree_paths]
-
+    #image.visualize_view_tree(image_array, config_json)
     # find tap inputs
     heatmap_array, interact_array = touch_input.convert_gestures(gestures, config_json)
 
@@ -53,14 +53,15 @@ def process_trace(trace_path, config_json):
         enumerate(zip(image_array, heatmap_array, interact_array)):
         sum_image_data = image_data + heatmap_data
         if is_valid_data(sum_image_data, interact_data, config_json):
-            # print("Interact:", interact_data)
-            # print("Path:", view_tree_paths[i])
-            # visualize_data(sum_image_data, config_json)
-
-            # filtered_data.append([sum_image_data, interact_data])
+            #print("Interact:", interact_data)
+            #print("Path:", view_tree_paths[i])
+            #visualize_data(sum_image_data, config_json) #visualize_data funciona com sum_image_data
+                #problema encontrado ... 
+                #o certo é extrair sum_image_data e interact_data. 
+            filtered_data.append([sum_image_data, interact_data])
             # for validation
-            filtered_data.append([view_tree_paths[i], interact_data,
-                                  np.unravel_index(np.argmax(heatmap_data[:,:,-1]), heatmap_data[:,:,-1].shape)])
+            #filtered_data.append([sum_image_data, interact_data,
+             #                     np.unravel_index(np.argmax(heatmap_data[:,:,-1]), heatmap_data[:,:,-1].shape)])
 
     return filtered_data
 
@@ -69,7 +70,7 @@ def run(config_path):
         config_json = json.load(config_file)
 
     filtered_traces_dir = config_json["filtered_traces_path"]
-    output_dir = config_json["output_dir"]
+    output_dir = config_json["output_dir_pickle"] #alterei aqui para um diretório apenas com pickles
 
     apps = next(os.walk(filtered_traces_dir))[1]
     for app in apps:
