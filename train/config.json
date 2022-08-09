@@ -1,8 +1,8 @@
 {
-    "training_data_dir": "/home/werverton/DATA/pickle_files",
-    "training_data_dir_test": "/home/werverton/DATA/pickle_files_test",
-    "validation_data_dir": "/home/werverton/DATA/validation_data",
-    "log_data_dir": "/home/werverton/DATA/training_log",
+    "training_data_dir": "../data/pickle_files",
+    "training_data_dir_test": "../data/pickle_files_test",
+    "validation_data_dir": "../data/validation_data",
+    "log_data_dir": "../data/training_log",
 
     "training_dim": 2,
     "predicting_dim": 1,
@@ -14,15 +14,15 @@
     "data_augmentation_threshold": 1,
 
     "dataset_threads": 100,
-    "batch_size": 64,
+    "batch_size": 32,
     "frame_num": 4,
 
     "learning_rate": 0.01,
     "weight_decay": 0.001,
     "log_step": 200,
-    "snapshot_step": 5000,
-    "max_iter": 500000,
+    "snapshot_step": 5,
+    "max_iter": 1000,
 
     "embedding_model": "model_495000.ckpt",
-    "embedding_dir": "/home/werverton/DATA/embedding"
+    "embedding_dir": "../data/embedding"
 }
